@@ -1,9 +1,12 @@
 import React from "react";
+import {Navbar} from "./components/Navbar/Navbar";
+import {Cotizaciones} from "./components/Cotizaciones/Cotizaciones";
 
 export const App = () => {
   return (
-    <div>
-      <h1>DOLAR ARGENTINO</h1>
-    </div>
+    <>
+      <Navbar />
+      <Cotizaciones />
+    </>
   );
 };
