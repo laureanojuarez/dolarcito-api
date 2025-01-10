@@ -9,6 +9,6 @@ export const dolares = [
   },
   {
     id: 3,
-    nombre: "Dolar TARJETA",
+    nombre: "Dolar Tarjeta",
   },
 ];
