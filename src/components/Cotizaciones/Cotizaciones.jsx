@@ -1,9 +1,10 @@
 import {DolarCard} from "../DolarCard/DolarCard";
+import {CotizacionesContainer} from "./cotizaciones-container";
 
 export const Cotizaciones = () => {
   return (
-    <div style={{display: "flex", gap: "25px", justifyContent: "center"}}>
+    <CotizacionesContainer className="cotizaciones-container">
       <DolarCard />
-    </div>
+    </CotizacionesContainer>
   );
 };

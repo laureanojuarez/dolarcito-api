@@ -7,7 +7,7 @@ export const DolarCardStyled = styled.div`
   border: 1px solid black;
   width: 250px;
   height: 225px;
-  padding: 20px;
+  background-color: rgb(39, 45, 41);
 
   & hr {
     width: 100%;
