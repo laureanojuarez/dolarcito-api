@@ -13,7 +13,7 @@ const DolarItem = ({dolar}) => {
       <h1
         style={{
           textAlign: "center",
-          fontSize: "30px",
+          fontSize: "25px",
           height: "40px",
           margin: "0",
         }}
