@@ -1,13 +1,13 @@
 import dolarLogo from "../../assets/dolarlogo.png";
-import {HeaderStyled} from "./navbar-styles";
+import {HeaderStyled, NameLogo} from "./navbar-styles";
 
 export const Navbar = () => {
   return (
     <HeaderStyled>
-      <div style={{display: "flex", alignItems: "center"}}>
+      <NameLogo>
         <img src={dolarLogo} alt="" />
         <h1>Dolar argentino</h1>
-      </div>
+      </NameLogo>
       {/* 
       <nav>
         <ul>

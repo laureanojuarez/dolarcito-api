@@ -50,16 +50,6 @@ export const Calculadora = () => {
 
   return (
     <CalculadoraContainer>
-      <CotizacionActual>
-        <span>
-          {isDolarToPeso ? "1 USD" : `${formatNumber(dolarOficial)} Pesos`}
-        </span>
-        <MdOutlineKeyboardDoubleArrowRight />
-        <span>
-          {isDolarToPeso ? `${formatNumber(dolarOficial)} Pesos` : "1 USD"}
-        </span>
-      </CotizacionActual>
-
       <CotizacionActual style={{gap: "1rem"}}>
         <InputDiv>
           <p>{isDolarToPeso ? "Dolar" : "Pesos"}</p>
@@ -74,7 +64,9 @@ export const Calculadora = () => {
 
         <InputDiv>
           <p>{isDolarToPeso ? "Pesos" : "Dolar"}</p>
-          <p>{formatNumber(calculo)}</p>
+          <div style={{height: "100%", alignContent: "center"}}>
+            <p>{formatNumber(calculo)}</p>
+          </div>
         </InputDiv>
       </CotizacionActual>
     </CalculadoraContainer>

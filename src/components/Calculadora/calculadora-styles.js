@@ -5,11 +5,14 @@ export const CalculadoraContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
 `;
 
 export const CotizacionActual = styled.div`
   display: flex;
+  width: 100%;
   justify-content: center;
+  gap: 5px;
   align-items: center;
   color: #f1f1f1;
 

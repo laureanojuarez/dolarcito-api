@@ -10,17 +10,9 @@ const DolarItem = ({dolar}) => {
 
   return (
     <DolarCardStyled>
-      <h1
-        style={{
-          textAlign: "center",
-          fontSize: "25px",
-          height: "40px",
-          margin: "0",
-        }}
-      >
-        {`Dolar ${formatName(dolar.nombre)}`}
-      </h1>
-      <hr />
+      <div style={{display: "flex", alignItems: "center"}}>
+        <h1>{`Dolar ${formatName(dolar.nombre)}`}</h1>
+      </div>
       <DolarCotizacion>
         <div>
           <p>Compra </p>
