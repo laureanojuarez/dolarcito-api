@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {LuArrowLeftRight} from "react-icons/lu";
 
 export const CalculadoraContainer = styled.section`
   display: flex;
@@ -42,4 +43,8 @@ export const InputDiv = styled.div`
 
   @media (max-width: 768px) {
   }
+`;
+
+export const ExchangeIcon = styled(LuArrowLeftRight)`
+  cursor: pointer;
 `;

@@ -2,6 +2,7 @@ import {MdOutlineKeyboardDoubleArrowRight} from "react-icons/md";
 import {
   CalculadoraContainer,
   CotizacionActual,
+  ExchangeIcon,
   InputDiv,
 } from "./calculadora-styles";
 import {useState, useContext} from "react";
@@ -11,6 +12,10 @@ export const Calculadora = () => {
   const dolares = useContext(DolarContext);
   const [inputValue, setInputValue] = useState("");
   const [calculo, setCalculo] = useState(0);
+  const [isDolarToPeso, setIsDolarToPeso] = useState(true);
+
+  const dolarOficial =
+    dolares.find((dolar) => dolar.casa === "oficial")?.venta || 0;
 
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -20,32 +25,55 @@ export const Calculadora = () => {
 
   const handleCalculo = (value) => {
     if (value) {
-      const dolarPrice = dolares.find(
-        (dolar) => dolar.casa === "oficial"
-      ).venta;
-      setCalculo(value * dolarPrice);
+      if (isDolarToPeso) {
+        setCalculo(value * dolarOficial.toFixed(2));
+      } else {
+        setCalculo(value / dolarOficial.toFixed(2));
+      }
     } else {
       setCalculo(0);
     }
   };
 
+  const handleExchange = () => {
+    setIsDolarToPeso(!isDolarToPeso);
+    handleCalculo(inputValue);
+  };
+
+  const formatNumber = (number) => {
+    return Number(number).toLocaleString("es-AR", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+  };
+
   return (
     <CalculadoraContainer>
       <CotizacionActual>
-        <span>1 USD</span>
+        <span>
+          {isDolarToPeso ? "1 USD" : `${formatNumber(dolarOficial)} Pesos`}
+        </span>
         <MdOutlineKeyboardDoubleArrowRight />
-        <span>{dolares.find((dolar) => dolar.casa === "oficial")?.venta}</span>
+        <span>
+          {isDolarToPeso ? `${formatNumber(dolarOficial)} Pesos` : "1 USD"}
+        </span>
       </CotizacionActual>
 
       <CotizacionActual style={{gap: "1rem"}}>
         <InputDiv>
-          <p>Dolar</p>
+          <p>{isDolarToPeso ? "Dolar" : "Pesos"}</p>
           <input type="text" value={inputValue} onChange={handleInputChange} />
         </InputDiv>
+        <ExchangeIcon
+          size={"30px"}
+          cursor={"pointer"}
+          onClick={handleExchange}
+          order={2}
+        />
 
         <InputDiv>
-          <p>Pesos</p>
-          <p>{calculo}</p>
+          <p>{isDolarToPeso ? "Pesos" : "Dolar"}</p>
+          <p>{formatNumber(calculo)}</p>
         </InputDiv>
       </CotizacionActual>
     </CalculadoraContainer>
