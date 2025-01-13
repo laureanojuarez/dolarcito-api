@@ -4,6 +4,8 @@ import {Cotizaciones} from "./components/Cotizaciones/Cotizaciones";
 import {Hero} from "./components/Hero/Hero";
 import {Calculadora} from "./components/Calculadora/Calculadora";
 import styled from "styled-components";
+import {DolarProvider} from "./context/DolarContext";
+import {Footer} from "./components/Footer/Footer";
 
 const AppContainer = styled.div`
   display: flex;
@@ -14,11 +16,14 @@ const AppContainer = styled.div`
 
 export const App = () => {
   return (
-    <AppContainer>
-      <Navbar />
-      <Hero />
-      <Calculadora />
-      <Cotizaciones />
-    </AppContainer>
+    <DolarProvider>
+      <AppContainer>
+        <Navbar />
+        <Hero />
+        <Calculadora />
+        <Cotizaciones />
+        <Footer />
+      </AppContainer>
+    </DolarProvider>
   );
 };

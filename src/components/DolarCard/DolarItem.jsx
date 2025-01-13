@@ -1,4 +1,4 @@
-import {DolarCardStyled} from "./dolarcard-styled";
+import {DolarCardStyled, DolarCotizacion} from "./dolarcard-styled";
 
 const DolarItem = ({dolar}) => {
   const formatName = (name) => {
@@ -21,17 +21,16 @@ const DolarItem = ({dolar}) => {
         {`Dolar ${formatName(dolar.nombre)}`}
       </h1>
       <hr />
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "25px",
-          textAlign: "center",
-        }}
-      >
-        <p>Compra: {dolar.compra}</p>
-        <p>Vende a: {dolar.venta}</p>
-      </div>
+      <DolarCotizacion>
+        <div>
+          <p>Compra </p>
+          <p>{dolar.compra}</p>
+        </div>
+        <div>
+          <p>Venta</p>
+          <p>{dolar.venta}</p>
+        </div>
+      </DolarCotizacion>
     </DolarCardStyled>
   );
 };

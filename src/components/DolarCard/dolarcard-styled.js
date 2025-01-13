@@ -14,3 +14,10 @@ export const DolarCardStyled = styled.div`
     width: 100%;
   }
 `;
+
+export const DolarCotizacion = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20px;
+`;

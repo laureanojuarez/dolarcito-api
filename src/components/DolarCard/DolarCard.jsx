@@ -1,23 +1,9 @@
-import {useState} from "react";
+import {useContext} from "react";
 import DolarItem from "./DolarItem";
-import {useEffect} from "react";
+import {DolarContext} from "../../context/DolarContext";
 
 export const DolarCard = () => {
-  const [dolares, setDolares] = useState([]);
-
-  useEffect(() => {
-    const fetchDolares = async () => {
-      try {
-        const response = await fetch("https://dolarapi.com/v1/dolares");
-        const data = await response.json();
-        setDolares(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchDolares();
-  }, []);
+  const dolares = useContext(DolarContext);
 
   return (
     <>
