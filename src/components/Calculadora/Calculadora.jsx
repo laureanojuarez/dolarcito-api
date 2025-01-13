@@ -36,8 +36,9 @@ export const Calculadora = () => {
   };
 
   const handleExchange = () => {
-    setIsDolarToPeso(!isDolarToPeso);
-    handleCalculo(inputValue);
+    const newIsDolarToPeso = !isDolarToPeso;
+    setIsDolarToPeso(newIsDolarToPeso);
+    handleCalculo(inputValue, newIsDolarToPeso);
   };
 
   const formatNumber = (number) => {
