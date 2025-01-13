@@ -20,10 +20,10 @@ export const Calculadora = () => {
   const handleInputChange = (e) => {
     const value = e.target.value;
     setInputValue(value);
-    handleCalculo(value);
+    handleCalculo(value, isDolarToPeso);
   };
 
-  const handleCalculo = (value) => {
+  const handleCalculo = (value, isDolarToPeso) => {
     if (value) {
       if (isDolarToPeso) {
         setCalculo(value * dolarOficial.toFixed(2));
