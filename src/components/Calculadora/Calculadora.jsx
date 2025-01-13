@@ -37,7 +37,7 @@ export const Calculadora = () => {
         <span>{dolares.find((dolar) => dolar.casa === "oficial")?.venta}</span>
       </CotizacionActual>
 
-      <CotizacionActual style={{gap: "5rem"}}>
+      <CotizacionActual style={{gap: "1rem"}}>
         <InputDiv>
           <p>Dolar</p>
           <input type="text" value={inputValue} onChange={handleInputChange} />

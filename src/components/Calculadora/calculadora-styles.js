@@ -11,6 +11,10 @@ export const CotizacionActual = styled.div`
   justify-content: center;
   align-items: center;
   color: #f1f1f1;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const InputDiv = styled.div`
@@ -34,5 +38,8 @@ export const InputDiv = styled.div`
     &:focus {
       outline: none;
     }
+  }
+
+  @media (max-width: 768px) {
   }
 `;
