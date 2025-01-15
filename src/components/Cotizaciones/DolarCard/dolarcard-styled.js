@@ -3,14 +3,13 @@ import styled from "styled-components";
 export const DolarCardStyled = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   border: 2px solid #daeef3;
   width: 250px;
-  height: 175px;
+  height: 150px;
   border-radius: 10px;
   color: #f1f1f1;
-  padding: 5px;
   & hr {
     width: 100%;
   }
@@ -19,15 +18,18 @@ export const DolarCardStyled = styled.div`
     width: 100%;
     height: auto;
     flex-direction: row;
+    justify-content: space-between;
   }
 `;
 
 export const DolarCotizacion = styled.div`
   display: flex;
-  width: 12rem;
   justify-content: space-evenly;
+  align-items: center;
   font-size: 20px;
-  text-align: start;
+  border-top: 1px solid;
+  width: 100%;
+  padding-top: 20px;
 
   @media (max-width: 768px) {
     justify-content: start;

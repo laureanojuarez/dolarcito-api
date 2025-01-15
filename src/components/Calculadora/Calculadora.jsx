@@ -1,4 +1,3 @@
-import {MdOutlineKeyboardDoubleArrowRight} from "react-icons/md";
 import {
   CalculadoraContainer,
   CotizacionActual,
@@ -15,7 +14,9 @@ export const Calculadora = () => {
   const [isDolarToPeso, setIsDolarToPeso] = useState(true);
 
   const dolarOficial =
-    dolares.find((dolar) => dolar.casa === "oficial")?.venta || 0;
+    (Array.isArray(dolares) &&
+      dolares.find((dolar) => dolar.casa === "oficial")?.venta) ||
+    0;
 
   const handleInputChange = (e) => {
     const value = e.target.value;
