@@ -16,6 +16,7 @@ const DolarItem = ({dolar, tiempoTranscurrido}) => {
           alignItems: "center",
           flexDirection: "column",
           textAlign: "center",
+          width: "150px",
         }}
       >
         <h1>{`Dolar ${formatName(dolar.nombre)}`}</h1>

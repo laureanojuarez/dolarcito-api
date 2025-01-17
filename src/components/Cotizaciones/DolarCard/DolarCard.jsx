@@ -1,5 +1,4 @@
 import {useContext} from "react";
-import {MobileDiv} from "./dolarcard-styled";
 import DolarItem from "./DolarItem";
 import {DolarContext} from "../../../context/DolarContext";
 
