@@ -11,7 +11,12 @@ const DolarItem = ({dolar, tiempoTranscurrido}) => {
   return (
     <DolarCardStyled>
       <div
-        style={{display: "flex", alignItems: "center", flexDirection: "column"}}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "column",
+          textAlign: "center",
+        }}
       >
         <h1>{`Dolar ${formatName(dolar.nombre)}`}</h1>
         <p>{tiempoTranscurrido}</p>

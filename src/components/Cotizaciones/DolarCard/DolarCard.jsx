@@ -12,15 +12,6 @@ export const DolarCard = () => {
 
   return (
     <>
-      <MobileDiv>
-        <h3>Tipo de cambio</h3>
-        <h2>
-          <span>Compra </span>
-          <span>/</span>
-          <span> Vende</span>
-        </h2>
-      </MobileDiv>
-
       {dolares.map((dolar) => (
         <DolarItem
           key={dolar.casa}

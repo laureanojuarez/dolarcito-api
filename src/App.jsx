@@ -3,7 +3,6 @@ import {Cotizaciones} from "./components/Cotizaciones/Cotizaciones";
 import {Hero} from "./components/Hero/Hero";
 import styled from "styled-components";
 import {DolarProvider} from "./context/DolarContext";
-import {Footer} from "./components/Footer/Footer";
 import {Calculadora} from "./components/Calculadora/Calculadora";
 
 const AppContainer = styled.div`
@@ -21,7 +20,6 @@ export const App = () => {
         <Hero />
         <Calculadora />
         <Cotizaciones />
-        <Footer />
       </AppContainer>
     </DolarProvider>
   );

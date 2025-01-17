@@ -3,7 +3,7 @@ import {DolarCard} from "./DolarCard/DolarCard";
 
 export const Cotizaciones = () => {
   return (
-    <CotizacionesContainer className="cotizaciones-container">
+    <CotizacionesContainer>
       <DolarCard />
     </CotizacionesContainer>
   );
