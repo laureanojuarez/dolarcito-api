@@ -1,11 +1,10 @@
-import React from "react";
 import {Navbar} from "./components/Navbar/Navbar";
 import {Cotizaciones} from "./components/Cotizaciones/Cotizaciones";
 import {Hero} from "./components/Hero/Hero";
-import {Calculadora} from "./components/Calculadora/Calculadora";
 import styled from "styled-components";
 import {DolarProvider} from "./context/DolarContext";
 import {Footer} from "./components/Footer/Footer";
+import {Calculadora} from "./components/Calculadora/Calculadora";
 
 const AppContainer = styled.div`
   display: flex;

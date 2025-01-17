@@ -1,9 +1,10 @@
 import {createContext, useEffect, useState} from "react";
 import {formatDistanceToNowInSpanish, parseISODate} from "../utils/dateUtils";
+import {useMemo} from "react";
 
 export const DolarContext = createContext();
 
-export const DolarProvider = ({children}) => {
+export const useDolar = () => {
   const [dolares, setDolares] = useState([]);
   const [fechaActualizacion, setFechaActualizacion] = useState("");
 
@@ -27,14 +28,25 @@ export const DolarProvider = ({children}) => {
     fetchDolares();
   }, []);
 
-  const parsedFechaActualizacion = parseISODate(fechaActualizacion);
-  const adjustedFechaActualizacion = new Date(
-    parsedFechaActualizacion.getTime() - 3 * 60 * 60 * 1000
-  ); // Ajuste manual para UTC-3
-  const tiempoTranscurrido = isNaN(parsedFechaActualizacion)
-    ? "Fecha inválida"
-    : formatDistanceToNowInSpanish(adjustedFechaActualizacion);
+  const parsedFechaActualizacion = useMemo(
+    () => parseISODate(fechaActualizacion),
+    [fechaActualizacion]
+  );
+  const adjustedFechaActualizacion = useMemo(
+    () => new Date(parsedFechaActualizacion.getTime() - 3 * 60 * 60 * 1000),
+    [parsedFechaActualizacion]
+  );
+  const tiempoTranscurrido = useMemo(() =>
+    isNaN(parsedFechaActualizacion)
+      ? "Fecha Invalida"
+      : formatDistanceToNowInSpanish(adjustedFechaActualizacion)
+  );
 
+  return {dolares, tiempoTranscurrido};
+};
+
+export const DolarProvider = ({children}) => {
+  const {dolares, tiempoTranscurrido} = useDolar();
   return (
     <DolarContext.Provider value={{dolares, tiempoTranscurrido}}>
       {children}

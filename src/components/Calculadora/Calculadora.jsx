@@ -4,50 +4,17 @@ import {
   ExchangeIcon,
   InputDiv,
 } from "./calculadora-styles";
-import {useState, useContext} from "react";
-import {DolarContext} from "../../context/DolarContext";
+import {useCalculadora} from "./useCalculadora";
 
 export const Calculadora = () => {
-  const dolares = useContext(DolarContext);
-  const [inputValue, setInputValue] = useState("");
-  const [calculo, setCalculo] = useState(0);
-  const [isDolarToPeso, setIsDolarToPeso] = useState(true);
-
-  const dolarOficial =
-    (Array.isArray(dolares) &&
-      dolares.find((dolar) => dolar.casa === "oficial")?.venta) ||
-    0;
-
-  const handleInputChange = (e) => {
-    const value = e.target.value;
-    setInputValue(value);
-    handleCalculo(value, isDolarToPeso);
-  };
-
-  const handleCalculo = (value, isDolarToPeso) => {
-    if (value) {
-      if (isDolarToPeso) {
-        setCalculo(value * dolarOficial.toFixed(2));
-      } else {
-        setCalculo(value / dolarOficial.toFixed(2));
-      }
-    } else {
-      setCalculo(0);
-    }
-  };
-
-  const handleExchange = () => {
-    const newIsDolarToPeso = !isDolarToPeso;
-    setIsDolarToPeso(newIsDolarToPeso);
-    handleCalculo(inputValue, newIsDolarToPeso);
-  };
-
-  const formatNumber = (number) => {
-    return Number(number).toLocaleString("es-AR", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2,
-    });
-  };
+  const {
+    inputValue,
+    calculo,
+    isDolarToPeso,
+    handleInputChange,
+    handleExchange,
+    formatNumber,
+  } = useCalculadora();
 
   return (
     <CalculadoraContainer>
