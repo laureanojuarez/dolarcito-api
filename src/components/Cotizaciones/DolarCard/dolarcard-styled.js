@@ -7,6 +7,7 @@ export const DolarCardStyled = styled.div`
   align-items: center;
   border: 2px solid #daeef3;
   width: 250px;
+  height: 180px;
   border-radius: 10px;
 
   h1 {
@@ -25,12 +26,10 @@ export const DolarCardStyled = styled.div`
 
 export const DolarCotizacion = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   text-align: start;
   font-size: 20px;
-  border-top: 1px solid;
-  padding: 10px 20px;
-  width: 200px;
+  width: 100%;
 
   @media (max-width: 768px) {
     gap: 40px;
