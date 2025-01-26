@@ -1,6 +1,6 @@
-import {DolarCardStyled, DolarCotizacion} from "./dolarcard-styled";
+import {DolarCardStyled, DolarCotizacion} from "./cotizaciones-styles";
 
-const DolarItem = ({dolar, tiempoTranscurrido}) => {
+export const DolarItem = ({dolar}) => {
   const formatName = (name) => {
     if (name === "Contado con liquidación") {
       return "CCL";
@@ -20,7 +20,6 @@ const DolarItem = ({dolar, tiempoTranscurrido}) => {
         }}
       >
         <h1>{`Dolar ${formatName(dolar.nombre)}`}</h1>
-        <p>{tiempoTranscurrido}</p>
       </div>
       <DolarCotizacion>
         <div>
@@ -35,5 +34,3 @@ const DolarItem = ({dolar, tiempoTranscurrido}) => {
     </DolarCardStyled>
   );
 };
-
-export default DolarItem;
