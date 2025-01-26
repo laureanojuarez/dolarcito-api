@@ -4,7 +4,7 @@ import {
   ExchangeIcon,
   InputDiv,
 } from "./calculadora-styles";
-import {useCalculadora} from "./useCalculadora";
+import {useCalculadora} from "../../hooks/useCalculadora";
 
 export const Calculadora = () => {
   const {
