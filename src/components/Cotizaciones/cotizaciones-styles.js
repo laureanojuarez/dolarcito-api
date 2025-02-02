@@ -2,53 +2,39 @@ import styled from "styled-components";
 
 export const CotizacionesContainer = styled.section`
   display: flex;
-  width: 85%;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
   color: white;
-
-  @media (max-width: 768px) {
-    gap: 10px;
-    font-size: 10px;
-    width: 95%;
-  }
+  gap: 1rem;
+  width: 80%;
 `;
 
-export const DolarCardStyled = styled.div`
+export const DolarBlue = styled.div`
+  width: 450px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-  border: 2px solid #daeef3;
-  width: 250px;
-  height: 180px;
-  border-radius: 10px;
-
-  h1 {
-    font-size: 20px;
-    margin: 0;
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    align-items: center;
-    font-size: 15px;
-  }
+  border-top: 1px solid white;
+  box-shadow: 0px 2px 17px -5px rgba(0, 0, 0, 0.75);
 `;
 
-export const DolarCotizacion = styled.div`
+export const DolaresSection = styled.section`
   display: flex;
-  justify-content: space-evenly;
-  text-align: start;
-  font-size: 20px;
-  width: 100%;
+  gap: 1rem;
+  flex-wrap: wrap;
+`;
 
-  @media (max-width: 768px) {
-    gap: 40px;
-    border-top: 0px;
-  }
+export const DolarItemStyled = styled.div`
+  display: flex;
+  padding: 5px;
+  width: 250px;
+  align-items: center;
+  border-top: 1px solid white;
+  box-shadow: 0px 2px 17px -5px rgba(0, 0, 0, 0.75);
+`;
+
+export const Valores = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 1rem;
 `;

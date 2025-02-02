@@ -8,12 +8,6 @@ export const Navbar = () => {
         <img src={dolarLogo} alt="" />
         <h1>Dolar argentino</h1>
       </NameLogo>
-      {/* 
-      <nav>
-        <ul>
-          <li>Cotizaciones</li>
-        </ul>
-      </nav> */}
     </HeaderStyled>
   );
 };

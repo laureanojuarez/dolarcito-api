@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const HeaderStyled = styled.header`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
+  height: 10vh;
   border-bottom: 1px solid #ccc;
   color: #f1f1f1;
   & img {

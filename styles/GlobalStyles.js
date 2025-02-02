@@ -17,7 +17,9 @@ export const GlobalStyles = createGlobalStyle`
 }
 
 body {
-background-color: #162936;
+  height: 100vh;
+  background: rgb(49,116,61);
+background: radial-gradient(circle, rgba(49,116,61,1) 0%, rgba(0,0,0,1) 100%);
 }
 
 

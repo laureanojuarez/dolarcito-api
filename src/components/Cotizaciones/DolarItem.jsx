@@ -1,36 +1,19 @@
-import {DolarCardStyled, DolarCotizacion} from "./cotizaciones-styles";
+import {DolarItemStyled, Valores} from "./cotizaciones-styles";
 
 export const DolarItem = ({dolar}) => {
-  const formatName = (name) => {
-    if (name === "Contado con liquidación") {
-      return "CCL";
-    }
-    return name;
-  };
-
   return (
-    <DolarCardStyled>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-          textAlign: "center",
-          width: "150px",
-        }}
-      >
-        <h1>{`Dolar ${formatName(dolar.nombre)}`}</h1>
-      </div>
-      <DolarCotizacion>
+    <DolarItemStyled>
+      <h1>{dolar.nombre}</h1>
+      <Valores>
         <div>
-          <p>Compra </p>
-          <p>{dolar.compra}</p>
+          <p>Compra</p>
+          <p>1200</p>
         </div>
         <div>
           <p>Venta</p>
-          <p>{dolar.venta}</p>
+          <p>1220</p>
         </div>
-      </DolarCotizacion>
-    </DolarCardStyled>
+      </Valores>
+    </DolarItemStyled>
   );
 };
