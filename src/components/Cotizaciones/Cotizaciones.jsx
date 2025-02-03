@@ -4,15 +4,17 @@ import {
   CotizacionesContainer,
   DolarBlue,
   DolaresSection,
-  Valores,
 } from "./cotizaciones-styles";
 import {DolarItem} from "./DolarItem";
 
 export const Cotizaciones = () => {
   const {dolares, isLoading, error} = useContext(DolarContext);
 
+  const dolaresSinBlue = dolares.filter(
+    (dolar) => dolar.nombre !== "Dolar Blue"
+  );
+
   // Necesito sacar el dolar Blue del mapeo
-  const dolaresSinBlue = dolares.filter((dolar) => dolar.nombre !== "Blue");
 
   return (
     <CotizacionesContainer>
@@ -21,7 +23,14 @@ export const Cotizaciones = () => {
 
       <DolarBlue>
         <h1>Dolar Blue</h1>
-        <Valores>
+        <div
+          style={{
+            display: "flex",
+            gap: "10px",
+            width: "100%",
+            justifyContent: "space-around",
+          }}
+        >
           <div>
             <p>Compra</p>
             <p>1200</p>
@@ -30,7 +39,7 @@ export const Cotizaciones = () => {
             <p>Venta</p>
             <p>1220</p>
           </div>
-        </Valores>
+        </div>
       </DolarBlue>
 
       <DolaresSection>

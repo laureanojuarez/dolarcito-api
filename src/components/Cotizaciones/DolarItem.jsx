@@ -3,7 +3,7 @@ import {DolarItemStyled, Valores} from "./cotizaciones-styles";
 export const DolarItem = ({dolar}) => {
   return (
     <DolarItemStyled>
-      <h1>{dolar.nombre}</h1>
+      <h1 style={{width: "150px"}}>{dolar.nombre}</h1>
       <Valores>
         <div>
           <p>Compra</p>
