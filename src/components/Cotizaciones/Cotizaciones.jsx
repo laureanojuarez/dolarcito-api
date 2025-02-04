@@ -2,49 +2,39 @@ import {useContext} from "react";
 import {DolarContext} from "../../context/DolarContext";
 import {
   CotizacionesContainer,
-  DolarBlue,
   DolaresSection,
+  DolarItemStyled,
+  Valores,
 } from "./cotizaciones-styles";
-import {DolarItem} from "./DolarItem";
 
 export const Cotizaciones = () => {
   const {dolares, isLoading, error} = useContext(DolarContext);
 
-  const dolaresSinBlue = dolares.filter(
-    (dolar) => dolar.nombre !== "Dolar Blue"
+  // Ordenar los datos para que el Dolar Blue aparezca primero
+  const dolaresOrdenados = dolares.sort((a, b) =>
+    a.nombre === "Blue" ? -1 : 1
   );
-
-  // Necesito sacar el dolar Blue del mapeo
 
   return (
     <CotizacionesContainer>
       {isLoading && <h2>Cargando...</h2>}
       {error && <h2>Error al cargar la cotización</h2>}
 
-      <DolarBlue>
-        <h1>Dolar Blue</h1>
-        <div
-          style={{
-            display: "flex",
-            gap: "10px",
-            width: "100%",
-            justifyContent: "space-around",
-          }}
-        >
-          <div>
-            <p>Compra</p>
-            <p>1200</p>
-          </div>
-          <div>
-            <p>Venta</p>
-            <p>1220</p>
-          </div>
-        </div>
-      </DolarBlue>
-
       <DolaresSection>
-        {dolaresSinBlue.map((dolar) => (
-          <DolarItem key={dolar.nombre} dolar={dolar} />
+        {dolaresOrdenados.map((dolar) => (
+          <DolarItemStyled key={dolar.nombre} isBlue={dolar.nombre === "Blue"}>
+            <h1>{dolar.nombre}</h1>
+            <Valores>
+              <div>
+                <p>Compra</p>
+                <p>{dolar.compra}</p>
+              </div>
+              <div>
+                <p>Venta</p>
+                <p>{dolar.venta}</p>
+              </div>
+            </Valores>
+          </DolarItemStyled>
         ))}
       </DolaresSection>
     </CotizacionesContainer>

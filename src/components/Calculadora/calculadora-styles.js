@@ -25,10 +25,10 @@ export const InputDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
+  width: 400px;
   height: 80px;
   font-size: 1.2em;
-  border-radius: 5px;
+  border-radius: 10px;
   background-color: white;
   color: black;
 
@@ -38,7 +38,7 @@ export const InputDiv = styled.div`
     border: none;
     font-size: 1.2em;
     text-align: center;
-
+    border-radius: 10px;
     &:focus {
       outline: none;
     }
