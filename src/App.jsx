@@ -4,12 +4,12 @@ import {Hero} from "./components/Hero/Hero";
 import styled from "styled-components";
 import {DolarProvider} from "./context/DolarContext";
 import {Calculadora} from "./components/Calculadora/Calculadora";
+import {Footer} from "./components/Footer/Footer";
 
 const AppContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: auto auto 0.5fr 2fr auto;
 `;
 
 export const App = () => {
@@ -20,6 +20,7 @@ export const App = () => {
         <Hero />
         <Calculadora />
         <Cotizaciones />
+        <Footer />
       </AppContainer>
     </DolarProvider>
   );

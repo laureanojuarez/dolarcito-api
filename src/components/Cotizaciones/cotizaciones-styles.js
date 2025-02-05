@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const CotizacionesContainer = styled.section`
+  display: flex;
+  align-items: center;
   color: white;
   width: 80%;
   margin: 0 auto;

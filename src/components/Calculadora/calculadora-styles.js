@@ -3,16 +3,12 @@ import {LuArrowLeftRight} from "react-icons/lu";
 
 export const CalculadoraContainer = styled.section`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  justify-content: center;
 `;
 
 export const CotizacionActual = styled.div`
   display: flex;
-  width: 100%;
   justify-content: center;
-  gap: 5px;
   align-items: center;
   color: #f1f1f1;
 
@@ -25,7 +21,7 @@ export const InputDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 400px;
+  width: 350px;
   height: 80px;
   font-size: 1.2em;
   border-radius: 10px;
@@ -42,9 +38,6 @@ export const InputDiv = styled.div`
     &:focus {
       outline: none;
     }
-  }
-
-  @media (max-width: 768px) {
   }
 `;
 
