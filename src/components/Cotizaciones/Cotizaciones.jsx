@@ -1,25 +1,35 @@
-import {useContext} from "react";
-import {DolarContext} from "../../context/DolarContext";
 import {
   CotizacionesContainer,
   DolaresSection,
   DolarItemStyled,
   Valores,
 } from "./cotizaciones-styles";
+import {fetchDolares} from "../../features/dolar/dolarSlice";
+import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
 
 export const Cotizaciones = () => {
-  const {dolares, isLoading, error} = useContext(DolarContext);
+  const dispatch = useDispatch();
+  const {dolares, isLoading, error} = useSelector((state) => state.dolar);
 
-  // Ordenar los datos para que el Dolar Blue aparezca primero
-  const dolaresOrdenados = dolares.sort((a, b) =>
+  useEffect(() => {
+    dispatch(fetchDolares());
+  }, [dispatch]);
+
+  const dolaresOrdenados = [...dolares].sort((a, b) =>
     a.nombre === "Blue" ? -1 : 1
   );
 
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <CotizacionesContainer>
-      {isLoading && <h2>Cargando...</h2>}
-      {error && <h2>Error al cargar la cotización</h2>}
-
       <DolaresSection>
         {dolaresOrdenados.map((dolar) => (
           <DolarItemStyled key={dolar.nombre} isBlue={dolar.nombre === "Blue"}>

@@ -5,8 +5,10 @@ import {
   InputDiv,
 } from "./calculadora-styles";
 import {useCalculadora} from "../../hooks/useCalculadora";
+import {useSelector} from "react-redux";
 
 export const Calculadora = () => {
+  const dolares = useSelector((state) => state.dolar.dolares);
   const {
     inputValue,
     calculo,
@@ -14,7 +16,7 @@ export const Calculadora = () => {
     handleInputChange,
     handleExchange,
     formatNumber,
-  } = useCalculadora();
+  } = useCalculadora(dolares);
 
   return (
     <CalculadoraContainer>
@@ -29,7 +31,6 @@ export const Calculadora = () => {
           onClick={handleExchange}
           order={2}
         />
-
         <InputDiv>
           <p>{isDolarToPeso ? "Pesos" : "Dolar"}</p>
           <div style={{height: "100%", alignContent: "center"}}>

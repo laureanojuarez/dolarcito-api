@@ -1,8 +1,6 @@
-import {useMemo, useContext, useState, useCallback} from "react";
-import {DolarContext} from "../context/DolarContext";
+import {useMemo, useState, useCallback} from "react";
 
-export const useCalculadora = () => {
-  const {dolares} = useContext(DolarContext);
+export const useCalculadora = (dolares) => {
   const [inputValue, setInputValue] = useState("");
   const [calculo, setCalculo] = useState(0);
   const [isDolarToPeso, setIsDolarToPeso] = useState(true);
