@@ -6,7 +6,7 @@ export const Navbar = () => {
     <HeaderStyled>
       <NameLogo>
         <img src={dolarLogo} alt="" />
-        <h1>Dolar argentino</h1>
+        <h1>Dolarcito</h1>
       </NameLogo>
     </HeaderStyled>
   );

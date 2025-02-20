@@ -4,6 +4,7 @@ import {LuArrowLeftRight} from "react-icons/lu";
 export const CalculadoraContainer = styled.section`
   display: flex;
   justify-content: center;
+  width: 100%;
 `;
 
 export const CotizacionActual = styled.div`
@@ -11,9 +12,11 @@ export const CotizacionActual = styled.div`
   justify-content: center;
   align-items: center;
   color: #f1f1f1;
+  width: 100%;
 
   @media (max-width: 768px) {
     flex-direction: column;
+    width: 100%;
   }
 `;
 
@@ -21,15 +24,17 @@ export const InputDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 350px;
+  width: 400px;
   height: 80px;
   font-size: 1.2em;
-  border-radius: 10px;
   background-color: white;
   color: black;
 
-  & input {
+  @media (max-width: 768px) {
     width: 100%;
+  }
+
+  & input {
     height: 100%;
     border: none;
     font-size: 1.2em;

@@ -10,6 +10,10 @@ export const CotizacionesContainer = styled.section`
   p {
     font-size: 1.5rem;
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const DolaresSection = styled.section`
