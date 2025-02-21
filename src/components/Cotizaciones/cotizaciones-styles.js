@@ -4,8 +4,7 @@ export const CotizacionesContainer = styled.section`
   display: flex;
   align-items: center;
   color: white;
-  width: 80%;
-  margin: 0 auto;
+  width: 85%;
   h1,
   p {
     font-size: 1.5rem;
@@ -17,7 +16,6 @@ export const CotizacionesContainer = styled.section`
 `;
 
 export const DolaresSection = styled.section`
-  grid-area: otrosDolares;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 1rem;
@@ -29,7 +27,6 @@ export const DolarItemStyled = styled.div`
   flex-direction: column;
   padding: 1rem;
   gap: 1rem;
-  align-items: center;
   justify-content: space-around;
   border-top: 1px solid white;
   box-shadow: 0px 1px 50px -3px rgba(0, 0, 0, 0.75);
@@ -43,7 +40,6 @@ export const DolarItemStyled = styled.div`
 `;
 
 export const Valores = styled.div`
-  width: 100%;
   display: flex;
   justify-content: space-around;
 `;

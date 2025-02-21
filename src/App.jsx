@@ -1,24 +1,36 @@
 import {Navbar} from "./components/Navbar/Navbar";
 import {Cotizaciones} from "./components/Cotizaciones/Cotizaciones";
-import {Hero} from "./components/Hero/Hero";
-import styled from "styled-components";
 import {Calculadora} from "./components/Calculadora/Calculadora";
 import {Footer} from "./components/Footer/Footer";
-
-const AppContainer = styled.div`
-  display: grid;
-  min-height: 100dvh;
-  grid-template-rows: auto auto 0.5fr 2fr auto;
-`;
+import {Hero} from "./components/Hero/Hero";
+import styled from "styled-components";
 
 export const App = () => {
+  const AppStyled = styled.div`
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-rows: auto 1fr auto;
+  `;
+  const Main = styled.main`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+  `;
+
   return (
-    <AppContainer>
+    <AppStyled>
       <Navbar />
-      <Hero />
-      <Calculadora />
-      <Cotizaciones />
+      <Main>
+        <Hero />
+        <Calculadora />
+        <Cotizaciones />
+      </Main>
+
       <Footer />
-    </AppContainer>
+    </AppStyled>
   );
 };
