@@ -1,12 +1,12 @@
 # React + Vite
 
-# Cotizaciones en Tiempo Real 🌎💵
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Una aplicación web creada con **React** y **styled-components** que muestra las cotizaciones del dólar blue, oficial y otras variantes, actualizadas en tiempo real. Este proyecto es ideal para quienes necesitan información precisa y rápida sobre los valores cambiarios.
+Currently, two official plugins are available:
 
-## 🛠️ Tecnologías Utilizadas
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- **React**: Framework para crear la interfaz de usuario.
-- **styled-components**: Para estilizar los componentes con CSS en JavaScript.
-- **API REST**: Consumo de datos en tiempo real de cotizaciones.
-- **JavaScript **: Lenguaje principal de programación.
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
