@@ -1,9 +1,7 @@
 @import 'tailwindcss';
 
 body {
-  background-color: black;
-  color: aliceblue;
+  background-color: grey;
+  color: whitesmoke;
 }
-
-
 
