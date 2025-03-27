@@ -1,32 +1,27 @@
-import axios from "axios";
-import { useState } from "react";
 import { useEffect } from "react";
+import useDolarStore from "../store/dolarStore";
 
 export const DolarCard = ({ dolar }) => {
-  const [dolarData, setDolarData] = useState(null);
-
-  const getDolar = async () => {
-    try {
-      const response = await axios.get("https://dolarapi.com/v1/dolares");
-
-      setDolarData(response.data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const { dolarData, isLoading, fetchDolarData } = useDolarStore();
 
   useEffect(() => {
-    getDolar();
-  }, []);
+    if (!dolarData) {
+      fetchDolarData(); // Llama a la acción para obtener los datos si aún no están cargados
+    }
+  }, [dolarData, fetchDolarData]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   if (!dolarData) {
-    return <div>Loading...</div>;
+    return <div>No data available</div>;
   }
 
   const dolarInfo = dolarData.find((item) => item.nombre === dolar);
 
   return (
-    <div className="flex flex-col items-center bg-gray-600 rounded-lg px-4 py-2">
+    <div className="flex flex-col items-center justify-center bg-gray-600 rounded-lg px-4 py-2 w-full md:w-1/4 lg:w-1/5 ">
       <h1>{dolar}</h1>
       <div className="flex gap-4">
         <div className="flex flex-col ">
