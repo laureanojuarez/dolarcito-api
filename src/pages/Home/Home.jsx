@@ -22,7 +22,7 @@ export default function Home() {
         <p>Dolar Oficial, Dolar Mep, Dolar Tarjeta...</p>
       </div>
       <InputDolar />
-      <section className="flex gap-4 flex-wrap justify-center">
+      <section className="flex gap-4 flex-wrap justify-center w-full">
         {tiposDeDolar.map((dolar) => (
           <DolarCard key={dolar} dolar={dolar} />
         ))}
