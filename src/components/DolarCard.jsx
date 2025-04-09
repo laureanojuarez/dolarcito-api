@@ -21,7 +21,7 @@ export const DolarCard = ({ dolar }) => {
   const dolarInfo = dolarData.find((item) => item.nombre === dolar);
 
   return (
-    <div className="flex flex-col items-center justify-center bg-gray-600 rounded-lg px-4 py-2 w-full md:w-1/4 shadow-md">
+    <div className="flex flex-col items-center justify-center bg-gray-600 md:rounded-lg px-4 py-2 w-full md:w-1/4 shadow-md h-32 border-t border-b border-gray-950 ">
       <h1>{dolar}</h1>
       <div className="flex gap-4">
         <div className="flex flex-col ">
